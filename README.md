@@ -17,6 +17,7 @@ Projeto desenvolvido no bootcamp Ignite da Rocketseat (trilha Node.js).
 ## Recursos
 
 - Express
+- Typescript
 
 ## Iniciando o projeto
 

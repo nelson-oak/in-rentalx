@@ -20,6 +20,8 @@ Projeto desenvolvido no bootcamp Ignite da Rocketseat (trilha Node.js).
 - Typescript
 - Docker
 - Docker Compose
+- TypeORM
+- Postgres
 
 ## Iniciando o projeto
 

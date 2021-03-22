@@ -38,15 +38,23 @@ yarn dev
 ```bash
 docker-compose up
 ```
-Ou
+Ou (executar e criar container)
 
 ```bash
 docker-compose up -d
 ```
-
-Nota: para iniciar e parar a execução de um container já criado com **docker-compose up -d**, usar os comandos abaixo:
+Para iniciar e parar a execução de um container já criado com **docker-compose up -d**, usar os comandos abaixo:
 
 ```bash
 docker-compose start
 docker-compose stop
+```
+## Configurações adicionais
+
+- Criar arquivo **ormconfig.json** com o conteúdo de **ormconfig.example.json**
+- Colocar as configurações de banco de dados no **ormconfig.json**
+- Se estiver usando o docker-compose, manter os dados de conexão que já estão em **ormconfig.json**, porém é necessário adicionar o ip do container do banco de dados
+- Obter o IP do container (após ter iniciado com **docker-compose up -d**)
+```bash
+docker exec database_rentx cat /etc/hosts 
 ```

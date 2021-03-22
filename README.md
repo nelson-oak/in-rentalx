@@ -42,8 +42,9 @@ Ou
 docker-compose up -d
 ```
 
-Nota: para terminar a excução e excluir o container, executar o comando abaixo:
+Nota: para iniciar e parar a execução de um container já criado com **docker-compose up -d**, usar os comandos abaixo:
 
 ```bash
-docker-compose down
+docker-compose start
+docker-compose stop
 ```

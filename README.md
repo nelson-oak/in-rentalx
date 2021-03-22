@@ -1,4 +1,4 @@
-# RentalX - Alugar Carros
+# RentX - Alugar Carros
 
 Projeto desenvolvido no bootcamp Ignite da Rocketseat (trilha Node.js).
 

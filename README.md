@@ -18,6 +18,8 @@ Projeto desenvolvido no bootcamp Ignite da Rocketseat (trilha Node.js).
 
 - Express
 - Typescript
+- Docker
+- Docker Compose
 
 ## Iniciando o projeto
 
@@ -28,4 +30,20 @@ Após clonar o projeto, é necessário atualizar as dependências.
 ```bash
 yarn
 yarn dev
+```
+### Executar a aplicação com o docker compose
+
+```bash
+docker-compose up
+```
+Ou
+
+```bash
+docker-compose up -d
+```
+
+Nota: para terminar a excução e excluir o container, executar o comando abaixo:
+
+```bash
+docker-compose down
 ```

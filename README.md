@@ -49,6 +49,7 @@ Para iniciar e parar a execução de um container já criado com **docker-compos
 docker-compose start
 docker-compose stop
 ```
+
 ## Configurações adicionais
 
 - Criar arquivo **ormconfig.json** com o conteúdo de **ormconfig.example.json**
@@ -57,4 +58,8 @@ docker-compose stop
 - Obter o IP do container (após ter iniciado com **docker-compose up -d**)
 ```bash
 docker exec database_rentx cat /etc/hosts 
+```
+- Executar as migrations do banco de dados com o comando abaixo:
+```bash
+yarn typeorm migration:run
 ```

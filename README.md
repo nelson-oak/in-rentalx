@@ -12,7 +12,7 @@ Projeto desenvolvido no bootcamp Ignite da Rocketseat (trilha Node.js).
 | specifications_cars | id, car_id, specification_id, created_at |
 | specifications | id, name, description |
 | rentals | id, car_id, user_id, start_date, end_date, expected_return_date, total, created_at, updated_at |
-| users | id, name, username, password, email, driver_license, admin, created_at |
+| users | id, name, password, email, driver_license, isAdmin, created_at |
 
 ## Recursos
 

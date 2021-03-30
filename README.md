@@ -6,7 +6,7 @@ Projeto desenvolvido no bootcamp Ignite da Rocketseat (trilha Node.js).
 
 | Entidades | Atributos |
 | - | - |
-| cars | id, name, description, daily_rate, available, license_plate, brand_id, fine_amount, brand, created_at |
+| cars | id, name, description, daily_rate, available, license_plate,  category_id, brand, fine_amount, created_at |
 | categories | id, name, description, created_at |
 | cars_image | id, car_id, image_name, created_at |
 | specifications_cars | id, car_id, specification_id, created_at |

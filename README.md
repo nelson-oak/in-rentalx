@@ -22,6 +22,8 @@ Projeto desenvolvido no bootcamp Ignite da Rocketseat (trilha Node.js).
 - Docker Compose
 - TypeORM
 - Postgres
+- Jest
+- Supertest
 
 ## Iniciando o projeto
 
@@ -48,6 +50,14 @@ Para iniciar e parar a execução de um container já criado com **docker-compos
 ```bash
 docker-compose start
 docker-compose stop
+```
+
+## Executar testes da aplicação
+
+Para executar os testes, basta utilizar o comando abaixo (necessita de um banco de testes **rentx_test** para executar):
+
+```bash
+yarn test
 ```
 
 ## Configurações adicionais

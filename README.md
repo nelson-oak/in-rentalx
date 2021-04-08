@@ -62,6 +62,7 @@ yarn test
 
 ## Configurações adicionais
 
+- Criar arquivo **.env** com o conteúdo de **.env.example**, adicionando os valores às variáveis
 - Criar arquivo **ormconfig.json** com o conteúdo de **ormconfig.example.json**
 - Colocar as configurações de banco de dados no **ormconfig.json**
 - Se estiver usando o docker-compose, manter os dados de conexão que já estão em **ormconfig.json**, porém é necessário adicionar o ip do container do banco de dados

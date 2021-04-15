@@ -6,6 +6,7 @@ import { IMailProvider } from "../IMailProvider";
 
 class EtherealMailProvider implements IMailProvider {
   private client: Transporter;
+
   constructor() {
     nodemailer
       .createTestAccount()

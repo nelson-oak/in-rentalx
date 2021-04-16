@@ -3,8 +3,6 @@ name: CI
 
 on:
   # Executar apenas nas pull requests. Poderia ser no commit tbm.
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 

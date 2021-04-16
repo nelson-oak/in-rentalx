@@ -13,7 +13,7 @@ import createConnection from "@shared/infra/typeorm";
 
 import swaggerFile from "../../../swagger.json";
 
-createConnection("database_rentx");
+createConnection();
 const app = express();
 
 app.use(express.json());

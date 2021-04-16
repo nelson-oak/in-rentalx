@@ -10,7 +10,7 @@ let connection: Connection;
 
 describe("Create Category Controller", () => {
   beforeAll(async () => {
-    connection = await createConnection("localhost");
+    connection = await createConnection();
 
     await connection.runMigrations();
 
@@ -35,7 +35,7 @@ describe("Create Category Controller", () => {
       password: "admin",
     });
 
-    const { refresh_token } = responseToken.body;
+    const { token } = responseToken.body;
 
     const response = await request(app)
       .post("/categories")
@@ -44,7 +44,7 @@ describe("Create Category Controller", () => {
         description: "Category Supertest Description",
       })
       .set({
-        Authorization: `Bearer ${refresh_token}`,
+        Authorization: `Bearer ${token}`,
       });
 
     expect(response.status).toBe(201);
@@ -56,7 +56,7 @@ describe("Create Category Controller", () => {
       password: "admin",
     });
 
-    const { refresh_token } = responseToken.body;
+    const { token } = responseToken.body;
 
     const response = await request(app)
       .post("/categories")
@@ -65,7 +65,7 @@ describe("Create Category Controller", () => {
         description: "Another Category Supertest Description",
       })
       .set({
-        Authorization: `Bearer ${refresh_token}`,
+        Authorization: `Bearer ${token}`,
       });
 
     expect(response.status).toBe(400);

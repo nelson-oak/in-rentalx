@@ -10,7 +10,7 @@ let connection: Connection;
 
 describe("List Category Controller", () => {
   beforeAll(async () => {
-    connection = await createConnection("localhost");
+    connection = await createConnection();
 
     await connection.runMigrations();
 
@@ -35,17 +35,19 @@ describe("List Category Controller", () => {
       password: "admin",
     });
 
-    const { refresh_token } = responseToken.body;
+    const { token } = responseToken.body;
 
-    await request(app)
+    const test = await request(app)
       .post("/categories")
       .send({
         name: "Category Supertest 1",
         description: "Category Supertest Description 1",
       })
       .set({
-        Authorization: `Bearer ${refresh_token}`,
+        Authorization: `Bearer ${token}`,
       });
+
+    expect(test.status).toBe(201);
 
     const response = await request(app).get("/categories");
 

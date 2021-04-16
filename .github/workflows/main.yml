@@ -42,6 +42,20 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "., !node_modules"
           target: "~/app/in-rentx"
+          
+      # Executar comandos no servidor
+      - name: Update API
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ~/app/in-rentx
+            yarn
+            yarn typeorm migration:run
+            pm2 restart rentx
         
       
       

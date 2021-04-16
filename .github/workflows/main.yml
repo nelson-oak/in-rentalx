@@ -1,0 +1,47 @@
+# Qualquer nome.
+name: CI
+
+on:
+  # Executar apenas nas pull requests. Poderia ser no commit tbm.
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    # Versão do sistema.
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      # Definir versão do node.
+      - name: Setup Nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      
+      # Instalar dependências.
+      - name: Install Dependencies
+        run: yarn
+      
+      # Executar build com babel
+      - name: Build
+        run: yarn build
+      
+      # Copiar para o servidor.
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "., !node_modules"
+          target: "test"
+        
+      
+      
